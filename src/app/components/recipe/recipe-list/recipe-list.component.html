@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-12">
-    <button class="btn btn-success">new Recipe</button>
+    <button class="btn btn-success" routerLink="create">new Recipe</button>
   </div>
 </div>
 <hr>
 <div class="row">
-  <div class="col-md-12" *ngFor="let recipe of recipes">
-    <app-recipe-item [recipe]="recipe"></app-recipe-item>
+  <div class="col-md-12" *ngFor="let recipe of recipes; let i = index">
+    <app-recipe-item [index]="i" [recipe]="recipe"></app-recipe-item>
   </div>
 </div>

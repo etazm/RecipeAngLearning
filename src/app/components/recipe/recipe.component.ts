@@ -9,19 +9,19 @@ import {RecipeService} from './recipe.service';
   providers: [RecipeService]
 })
 export class RecipeComponent implements OnInit {
-  chosenRecipe: Recipe | boolean = false;
-
-  constructor(private recipeService: RecipeService) {
-  }
+  // chosenRecipe: Recipe | boolean = false;
+  //
+  // constructor(private recipeService: RecipeService) {
+  // }
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected.subscribe((recipe) => {
-      this.showRecipeDetails(recipe);
-    });
+    // this.recipeService.recipeSelected.subscribe((recipe) => {
+    //   this.showRecipeDetails(recipe);
+    // });
   }
 
-  showRecipeDetails(recipe: any): void {
-    this.chosenRecipe = recipe;
-  }
+  // showRecipeDetails(recipe: any): void {
+  //   this.chosenRecipe = recipe;
+  // }
 
 }
