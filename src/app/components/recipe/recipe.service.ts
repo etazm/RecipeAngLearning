@@ -1,11 +1,11 @@
-// import {Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 // import {EventEmitter} from '@angular/core';
 import {Recipe} from './recipe.model';
 import {Ingredient} from '../../shared/ingredient.model';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 export class RecipeService {
   // recipeSelected = new EventEmitter<Recipe>();
 
@@ -37,10 +37,22 @@ export class RecipeService {
   }
 
   getRecipes(): Recipe[] {
-    return this.recipes.slice();
+    return this.recipes;
   }
 
   getRecipe(index: number): Recipe {
     return this.recipes[index];
+  }
+
+  addRecipe(recipe: Recipe): void {
+    this.recipes.push(recipe);
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe): void {
+    this.recipes[index] = newRecipe;
+  }
+
+  deleteRecipe(index: number): void {
+    this.recipes.splice(index, 1);
   }
 }
